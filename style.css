@@ -1,0 +1,99 @@
+*{
+    margin: 0;padding: 0;box-sizing: border-box;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+
+    /* background-color: #867070; */
+    /* color: white; */
+    scrollbar-width: none;
+    display: flex;
+    align-items: center;    
+    justify-content: center;
+}
+
+
+#main{
+    width: 50%;
+    height: 60%;
+    /* background-color: #c02121; */
+    display: flex;
+    flex-direction: column;
+    align-items: center ;
+    justify-content: space-evenly;
+    border: 2px solid black ;
+    gap: 40px;
+}
+
+#inputArea{
+    width: 100% ;
+    display: flex;
+    justify-content: center;
+    height: 30px;
+    /* position: relative; */
+}
+
+input {
+
+    /* border-radius: 20px;  */
+    width: 40%;
+    height: 100%;
+    
+    
+    
+}
+#inputArea button{
+    /* position: absolute; */
+    /* border-radius: 20px; */
+    height: 100%;
+
+    width: 10%;
+    /* text-align: c; */
+
+}
+
+#inputArea button:hover, li button:hover{
+    cursor: pointer;
+    background-color: rgba(116, 129, 85, 0.808);
+    color: white;
+}
+
+
+
+
+ul{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        align-items: center;  
+    }
+
+
+         li{
+            width: 100%;
+
+            
+            display: flex;
+            justify-content: space-around;
+        font-size: larger;
+
+            gap: 100p;
+    }
+
+    li button{
+            padding: 10px;
+            border-radius: 10px;
+            border: none;
+    }
+
+
+    p{
+    }
+
+    .nonactive{
+        display: none;
+    }
