@@ -1,99 +1,256 @@
-*{
-    margin: 0;padding: 0;box-sizing: border-box;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body{
-    width: 100vw;
-    height: 100vh;
-
-    /* background-color: #867070; */
-    /* color: white; */
-    scrollbar-width: none;
+body {
+    min-height: 100vh;
+    width: 100%;
     display: flex;
-    align-items: center;    
+    align-items: center;
     justify-content: center;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
 }
 
+/* =========================
+   MAIN CONTAINER
+========================= */
 
-#main{
+#main {
     width: 50%;
-    height: 60%;
-    /* background-color: #c02121; */
+    max-width: 650px;
+    min-height: 400px;
+    padding: 30px 25px;
+
     display: flex;
     flex-direction: column;
-    align-items: center ;
-    justify-content: space-evenly;
-    border: 2px solid black ;
-    gap: 40px;
+    align-items: center;
+    justify-content: flex-start;
+
+    gap: 30px;
+
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: white;
 }
 
-#inputArea{
-    width: 100% ;
+#main h1 {
+    font-size: 32px;
+    text-align: center;
+}
+
+/* =========================
+   INPUT AREA
+========================= */
+
+#inputArea {
+    width: 100%;
     display: flex;
     justify-content: center;
-    height: 30px;
-    /* position: relative; */
+    gap: 8px;
+    height: 40px;
 }
 
 input {
-
-    /* border-radius: 20px;  */
-    width: 40%;
+    width: 75%;
+    min-width: 0;
     height: 100%;
-    
-    
-    
-}
-#inputArea button{
-    /* position: absolute; */
-    /* border-radius: 20px; */
-    height: 100%;
-
-    width: 10%;
-    /* text-align: c; */
-
+    padding: 0 12px;
+    font-size: 16px;
+    border: 1px solid #777;
+    border-radius: 5px;
+    outline: none;
 }
 
-#inputArea button:hover, li button:hover{
+input:focus {
+    border-color: #748155;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+#inputArea button {
+    width: 25%;
+    height: 100%;
+    padding: 0 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #e5e5e5;
+    font-size: 14px;
     cursor: pointer;
+    transition: 0.3s;
+}
+
+#inputArea button:hover,
+li button:hover {
     background-color: rgba(116, 129, 85, 0.808);
     color: white;
 }
 
+/* =========================
+   GROCERY LIST
+========================= */
 
+ul {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    list-style: none;
+}
 
+li {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 10px;
+    font-size: 17px;
+    border-bottom: 1px solid #ddd;
+}
 
-ul{
+li p {
+    flex: 1;
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+li .btn {
+    display: flex;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+li button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* =========================
+   CLEAR ITEMS
+========================= */
+
+#clearitems {
+    color: #d33;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#clearitems:hover {
+    color: darkred;
+}
+
+/* =========================
+   HIDE / SHOW
+========================= */
+
+.nonactive {
+    display: none !important;
+}
+
+/* =========================
+   TABLET RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+    #main {
+        width: 75%;
+    }
+
+    #main h1 {
+        font-size: 28px;
+    }
+
+}
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 12px;
+        align-items: flex-start;
+    }
+
+    #main {
         width: 100%;
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-
-        align-items: center;  
+        min-height: 350px;
+        padding: 25px 15px;
+        gap: 25px;
     }
 
-
-         li{
-            width: 100%;
-
-            
-            display: flex;
-            justify-content: space-around;
-        font-size: larger;
-
-            gap: 100p;
+    #main h1 {
+        font-size: 26px;
     }
 
-    li button{
-            padding: 10px;
-            border-radius: 10px;
-            border: none;
+    #inputArea {
+        height: 42px;
+        gap: 6px;
     }
 
-
-    p{
+    input {
+        width: 70%;
+        font-size: 14px;
     }
 
-    .nonactive{
-        display: none;
+    #inputArea button {
+        width: 30%;
+        font-size: 13px;
+        padding: 0 5px;
     }
+
+    li {
+        font-size: 15px;
+        gap: 8px;
+        padding: 10px 5px;
+    }
+
+    li .btn {
+        gap: 5px;
+    }
+
+    li button {
+        padding: 8px 10px;
+        font-size: 12px;
+    }
+
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 360px) {
+
+    #main {
+        padding: 20px 10px;
+    }
+
+    #main h1 {
+        font-size: 23px;
+    }
+
+    li {
+        font-size: 14px;
+    }
+
+    li button {
+        padding: 7px 8px;
+        font-size: 11px;
+    }
+
+}
